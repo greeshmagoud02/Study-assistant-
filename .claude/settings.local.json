@@ -6,7 +6,10 @@
       "Bash(npm run *)",
       "PowerShell(Get-Process -Name node -ErrorAction SilentlyContinue)",
       "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
-      "PowerShell(\"done\")"
+      "PowerShell(\"done\")",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "PowerShell(\"stopped\")"
     ]
   }
 }
