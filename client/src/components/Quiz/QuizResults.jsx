@@ -3,14 +3,21 @@ import { Badge } from "../Common/Badge";
 import { QuizQuestion } from "./QuizQuestion";
 import { formatTime } from "../../utils/formatTime";
 
-function scoreTone(percent) {
-  if (percent >= 80) return "green";
-  if (percent >= 50) return "amber";
-  return "red";
+const SCORE_TONES = {
+  high: { textClass: "text-emerald-600 dark:text-emerald-400", badge: "green", label: "Great job!" },
+  mid: { textClass: "text-amber-600 dark:text-amber-400", badge: "amber", label: "Good effort" },
+  low: { textClass: "text-red-600 dark:text-red-400", badge: "red", label: "Keep practicing" },
+};
+
+function getScoreTone(percent) {
+  if (percent >= 80) return SCORE_TONES.high;
+  if (percent >= 50) return SCORE_TONES.mid;
+  return SCORE_TONES.low;
 }
 
 export function QuizResults({ results, elapsedSeconds, round, onRetryIncorrect, onRestart }) {
   const { items, correctCount, total, scorePercent, incorrectQuestions } = results;
+  const tone = getScoreTone(scorePercent);
 
   return (
     <div className="animate-fade-in space-y-8">
@@ -23,10 +30,11 @@ export function QuizResults({ results, elapsedSeconds, round, onRetryIncorrect, 
         <p className="text-sm font-medium uppercase tracking-wide text-gray-400 dark:text-gray-500">
           Your score
         </p>
-        <p className="mt-2 text-5xl font-extrabold text-gray-900 dark:text-white">
-          {scorePercent}%
-        </p>
-        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        <p className={`mt-2 text-5xl font-extrabold ${tone.textClass}`}>{scorePercent}%</p>
+        <Badge tone={tone.badge} className="mt-3">
+          {tone.label}
+        </Badge>
+        <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
           {correctCount} out of {total} correct &middot; {formatTime(elapsedSeconds)}
         </p>
 

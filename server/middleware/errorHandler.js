@@ -7,7 +7,6 @@ export function notFoundHandler(req, res) {
   });
 }
 
-// eslint-disable-next-line no-unused-vars
 export function errorHandler(err, req, res, next) {
   if (err instanceof AppError) {
     return res.status(err.statusCode).json({
