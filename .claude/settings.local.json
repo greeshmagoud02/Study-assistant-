@@ -13,7 +13,13 @@
       "Bash(curl -s -X POST http://localhost:5000/api/generate -H \"Content-Type: application/json\" -d '{\"text\":\"Photosynthesis is the process by which plants convert light energy into chemical energy, producing glucose and oxygen from carbon dioxide and water.\",\"mode\":\"flashcards\"}')",
       "Bash(curl -s -X POST http://localhost:5000/api/generate -H \"Content-Type: application/json\" -d '{\"text\":\"Photosynthesis is the process by which plants convert light energy into chemical energy.\",\"mode\":\"flashcards\"}')",
       "Bash(curl -s -X POST http://localhost:5000/api/generate -H \"Content-Type: application/json\" -d '{\"text\":\"The French Revolution began in 1789 and led to the end of the monarchy in France. Key events include the storming of the Bastille and the Reign of Terror.\",\"mode\":\"quiz\"}')",
-      "Bash(curl -s http://localhost:5000/health)"
+      "Bash(curl -s http://localhost:5000/health)",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(curl -s -X POST http://localhost:5000/api/generate -H \"Content-Type: application/json\" -d '{\"text\":\"The water cycle describes how water moves through evaporation, condensation, and precipitation.\",\"mode\":\"flashcards\"}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173 --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173 --max-time 5)",
+      "Bash(git ls-tree *)",
+      "Bash(grep -i \"\\\\.env$\")"
     ]
   }
 }

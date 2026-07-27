@@ -17,5 +17,9 @@ services:
         value: claude-sonnet-5
       - key: CLIENT_ORIGIN
         sync: false
-      - key: PORT
-        value: 5000
+      # Temporary free-tier provider override — remove once ANTHROPIC_API_KEY
+      # has credits (see server/services/claudeService.js).
+      - key: AI_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false
