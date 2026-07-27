@@ -22,6 +22,7 @@ Turn raw study notes — or just a topic name — into interactive flashcards an
 - [Future Improvements](#future-improvements)
 - [Time Spent](#time-spent)
 - [Screenshots](#screenshots)
+- [Demo Recording](#demo-recording)
 - [Testing Checklist](#testing-checklist)
 - [Suggested Commit History](#suggested-commit-history)
 - [License](#license)
@@ -275,6 +276,12 @@ _Add screenshots before submission:_
 | Home (empty state) | Flashcards | Quiz | Quiz results | Mobile |
 |---|---|---|---|---|
 | `screenshots/home.png` | `screenshots/flashcards.png` | `screenshots/quiz.png` | `screenshots/results.png` | `screenshots/mobile.png` |
+
+Drop your PNGs into the `screenshots/` folder using those exact filenames and this table will render them automatically.
+
+## Demo Recording
+
+See [`DEMO.md`](DEMO.md) for a beat-by-beat 2–3 minute recording script covering every required flow: home page, generating flashcards, flip/shuffle/restart, generating a quiz, answering and submitting, retry-incorrect, loading states, error handling, and the mobile responsive view.
 
 ## Testing Checklist
 
